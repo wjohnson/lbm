@@ -1,4 +1,3 @@
-
 gini_process <-function(classes,splitvar = NULL){
   #Assumes Splitvar is a logical vector
   if (is.null(splitvar)){
@@ -28,25 +27,3 @@ info_process <-function(classes,splitvar = NULL){
   Yes_Node_Info <- -sum(Yes_Col*log(Yes_Col,2))
   return(sum(base_prob * c(No_Node_Info,Yes_Node_Info)))
 }
-
-Gini Split: Average_Token_Length < 4.7
-#Information Gain: num_imgs >= 5.5
-
-# ## Calculating Gini Split
-# gini_process(NewsPop$channel)
-# 
-# gini_process(NewsPop$channel,
-#              NewsPop$average_token_length < 4.713221)
-# 
-# gini_process(NewsPop$channel,
-#              NewsPop$num_imgs >= 5.5)
-# 
-# gini_process(NewsPop$channel,
-#              NewsPop$num_keywords < 6.5)
-# 
-# ## Calculating Information Gain
-# info_process(NewsPop$channel) - info_process(NewsPop$channel,
-#                                              NewsPop$num_imgs >= 5.5)
-# 
-# info_process(NewsPop$channel) - info_process(NewsPop$channel,
-#                                              NewsPop$average_token_length < 4.713221)
